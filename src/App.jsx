@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
+         
         <div className='little-container'>
         <p>
          {count}
@@ -32,12 +31,17 @@ function App() {
 
         </div>
 
+        <div className='bottom'>
+
         <div className='nouse'>
-          Salut!
+         <p></p>
         </div>
 
         <div className='mouth'>
-          Salut!
+
+           <div></div>
+        </div>
+
         </div>
         
       </header>
