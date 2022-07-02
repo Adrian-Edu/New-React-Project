@@ -16,7 +16,7 @@ function App() {
   }
 
   const handleClickChangeParagraf = () => {
-   setParagraf("La MuNcA!")
+   setParagraf("Salut!")
   }
 
   return (
