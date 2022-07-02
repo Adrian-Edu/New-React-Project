@@ -4,6 +4,7 @@ import './App.css';
 function App() {
 
   const [count, setCount] = useState(0)
+  const [paragraf, setParagraf] = useState (" ")
 
 
   const handleClickPlus = () => {
@@ -12,6 +13,10 @@ function App() {
 
   const handleClickMinus = () => {
    setCount(count - 1)
+  }
+
+  const handleClickChangeParagraf = () => {
+   setParagraf("La MuNcA!")
   }
 
   return (
@@ -34,12 +39,11 @@ function App() {
         <div className='bottom'>
 
         <div className='nouse'>
-         <p></p>
+         <button onClick={handleClickChangeParagraf}>Click!</button>
         </div>
 
         <div className='mouth'>
-
-           <div></div>
+           <p>{paragraf}</p>
         </div>
 
         </div>
