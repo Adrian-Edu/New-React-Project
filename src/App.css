@@ -19,17 +19,18 @@
   color: white;
 }
 
-.little-container {
-  background-color: blue;
+.head-container {
+  background-color: white;
   width: 280px;
+  color: black;
 }
 
-.something {
+.mid-section {
   background-color: rgb(60, 206, 2);
   margin: 20px;
 }
 
-.something button {
+.mid-section button {
   height: 100px;
   width: 100px;
   margin: 20px;
@@ -38,7 +39,7 @@
 }
 
 .mouth {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: 150px;
   height: 40px;
   display: flex;
@@ -71,4 +72,16 @@
 
 .mouth p {
   color: black;
+}
+
+.minus {
+  background-color: rgb(4, 4, 248);
+}
+
+.plus {
+  background-color: rgb(0, 255, 255);
+}
+
+.zero {
+  background-color:white;
 }

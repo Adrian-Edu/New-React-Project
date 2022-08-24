@@ -1,53 +1,54 @@
-import React, {useState} from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
-
-  const [count, setCount] = useState(0)
-  const [paragraf, setParagraf] = useState (" ")
-
+  const [count, setCount] = useState(0);
+  const [message, setMessage] = useState(" ");
+  const [headBackgroundColor, setHeadBackgroundColor] = useState("");
 
   const handleClickPlus = () => {
-    setCount(count + 1)
-  }
+    if (count >= 0) {
+      setHeadBackgroundColor("plus");
+    }
+    setCount((prevState) => prevState + 1);
+  };
 
   const handleClickMinus = () => {
-   setCount(count - 1)
-  }
+    if (count <= 0) {
+      setHeadBackgroundColor("minus");
+    }
+    setCount((prevState) => prevState - 1);
+  };
 
   const handleClickChangeParagraf = () => {
-   setParagraf("Salut!")
-  }
+    setMessage("Hello!");
+  };
 
   return (
     <div className="App">
       <header className="App-header">
-         
-        <div className='little-container'>
-        <p>
-         {count}
-        </p>
+        <div className={`head-container ${headBackgroundColor}`}>
+          <p>{count}</p>
         </div>
 
-        <div className='something'>
-
-        <button onClick={handleClickPlus}><h1>+</h1></button>
-        <button onClick={handleClickMinus}><h1>-</h1></button>
-
+        <div className="mid-section">
+          <button onClick={handleClickMinus}>
+            <h1>-</h1>
+          </button>
+          <button onClick={handleClickPlus}>
+            <h1>+</h1>
+          </button>
         </div>
 
-        <div className='bottom'>
+        <div className="bottom">
+          <div className="nouse">
+            <button onClick={handleClickChangeParagraf}>Click!</button>
+          </div>
 
-        <div className='nouse'>
-         <button onClick={handleClickChangeParagraf}>Click!</button>
+          <div className="mouth">
+            <p>{message}</p>
+          </div>
         </div>
-
-        <div className='mouth'>
-           <p>{paragraf}</p>
-        </div>
-
-        </div>
-        
       </header>
     </div>
   );
