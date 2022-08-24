@@ -2,43 +2,36 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(36);
   const [message, setMessage] = useState(" ");
   const [headBackgroundColor, setHeadBackgroundColor] = useState("");
 
   const handleClickPlus = () => {
-    if (count > 0) {
-      setHeadBackgroundColor("plus");
-    }
     setCount((prevState) => prevState + 1);
   };
 
   const handleClickMinus = () => {
-    if (count < 0) {
-      setHeadBackgroundColor("minus");
-    }
     setCount((prevState) => prevState - 1);
   };
 
   useEffect(() => {
-    if (count > 0) {
-      setHeadBackgroundColor("plus");
-    } else if (count < 0) {
-      setHeadBackgroundColor("minus");
+    if (count >= 39) {
+      setHeadBackgroundColor("high");
+      setMessage("High temperature!");
+    } else if (count < 37) {
+      setHeadBackgroundColor("to-low");
+      setMessage("Not normal temprature!");
     } else {
-      setHeadBackgroundColor("zero");
+      setHeadBackgroundColor("normal");
+      setMessage("Normal body temperature!");
     }
   }, [count]);
-
-  const handleClickChangeParagraf = () => {
-    setMessage("Hello!");
-  };
 
   return (
     <div className="App">
       <header className="App-header">
         <div className={`head-container ${headBackgroundColor}`}>
-          <p>{count}</p>
+          <p style={{ fontSize: `${count}px` }}>{count}</p>
         </div>
 
         <div className="mid-section">
@@ -51,9 +44,7 @@ function App() {
         </div>
 
         <div className="bottom">
-          <div className="nouse">
-            <button onClick={handleClickChangeParagraf}>Click!</button>
-          </div>
+          <div className="nouse"></div>
 
           <div className="mouth">
             <p>{message}</p>
@@ -65,3 +56,5 @@ function App() {
 }
 
 export default App;
+
+//   <button onClick={handleClickChangeParagraf}>Click!</button>

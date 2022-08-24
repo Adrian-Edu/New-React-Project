@@ -23,6 +23,7 @@
   background-color: white;
   width: 280px;
   color: black;
+
 }
 
 .mid-section {
@@ -40,8 +41,8 @@
 
 .mouth {
   background-color: rgb(255, 255, 255);
-  width: 150px;
-  height: 40px;
+  width: 200px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,11 +60,11 @@
   align-items: center;
 }
 
-.nouse button {
-  background-color: rgb(0, 217, 255);
+.nouse {
+  background-color: rgb(255, 255, 255);
   height: 50px;
   width: 50px;
-  border: 2px solid;
+  border: 5px solid black;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -72,16 +73,17 @@
 
 .mouth p {
   color: black;
+  font-size: 18px;
 }
 
-.minus {
-  background-color: rgb(4, 4, 248);
+.normal {
+  background-color: greenyellow;
 }
 
-.plus {
-  background-color: rgb(0, 255, 255);
+.high {
+  background-color: rgb(255, 30, 0);
 }
 
-.zero {
-  background-color: white;
+.to-low {
+  background-color: blue;
 }
