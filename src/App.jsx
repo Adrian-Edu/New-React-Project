@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -7,18 +7,28 @@ function App() {
   const [headBackgroundColor, setHeadBackgroundColor] = useState("");
 
   const handleClickPlus = () => {
-    if (count >= 0) {
+    if (count > 0) {
       setHeadBackgroundColor("plus");
     }
     setCount((prevState) => prevState + 1);
   };
 
   const handleClickMinus = () => {
-    if (count <= 0) {
+    if (count < 0) {
       setHeadBackgroundColor("minus");
     }
     setCount((prevState) => prevState - 1);
   };
+
+  useEffect(() => {
+    if (count > 0) {
+      setHeadBackgroundColor("plus");
+    } else if (count < 0) {
+      setHeadBackgroundColor("minus");
+    } else {
+      setHeadBackgroundColor("zero");
+    }
+  }, [count]);
 
   const handleClickChangeParagraf = () => {
     setMessage("Hello!");
