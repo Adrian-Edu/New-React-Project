@@ -23,7 +23,10 @@
   background-color: white;
   width: 280px;
   color: black;
+}
 
+.head-container p {
+  font-weight: bold;
 }
 
 .mid-section {
@@ -74,16 +77,29 @@
 .mouth p {
   color: black;
   font-size: 18px;
+  font-weight: bold;
 }
 
-.normal {
-  background-color: greenyellow;
+.normal-bk {
+  background-color: rgb(173, 255, 47);
 }
 
-.high {
+.high-bk {
   background-color: rgb(255, 30, 0);
 }
 
-.to-low {
-  background-color: blue;
+.to-low-bk {
+  background-color: rgb(0, 0, 255);
+}
+
+.normal-p {
+  color: rgb(173, 255, 47);
+}
+
+.high-p {
+ color: rgb(255, 30, 0);
+}
+
+.to-lowp {
+  color: rgb(0, 0, 255);
 }
