@@ -5,7 +5,7 @@ function App() {
   const [count, setCount] = useState(36);
   const [message, setMessage] = useState(" ");
   const [headBackgroundColor, setHeadBackgroundColor] = useState("");
-  const [changeMessageColor, setChangeMessageColor] = useState();
+  const [changeMessageColor, setChangeMessageColor] = useState("");
 
   const handleClickPlus = () => {
     setCount((prevState) => prevState + 1);
@@ -19,15 +19,15 @@ function App() {
     if (count < 37) {
       setHeadBackgroundColor("to-low-bk");
       setMessage("Not normal temprature!");
-      console.log(changeMessageColor);
+      setChangeMessageColor("rgb(0, 0, 255)");
     } else if (count >= 37 && count < 39) {
       setHeadBackgroundColor("normal-bk");
       setMessage("Normal body temperature!");
-      console.log(changeMessageColor);
+      setChangeMessageColor("rgb(173, 255, 47)");
     } else {
       setHeadBackgroundColor("high-bk");
       setMessage("High temperature!");
-      console.log(changeMessageColor);
+      setChangeMessageColor("rgb(255, 30, 0)");
     }
   }, [count]);
 
@@ -50,8 +50,8 @@ function App() {
         <div className="bottom">
           <div className="nouse"></div>
 
-          <div className={`mouth ${headBackgroundColor}`}>
-            <p>{message}</p>
+          <div className="mouth">
+            <p style={{ color: changeMessageColor }}>{message}</p>
           </div>
         </div>
       </header>
