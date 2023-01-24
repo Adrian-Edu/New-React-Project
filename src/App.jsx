@@ -1,20 +1,15 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
 import { increment, decrement } from "./toolkit/reducer";
+import { useDispatch, useSelector } from "react-redux";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(36);
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+
   const [message, setMessage] = useState(" ");
   const [headBackgroundColor, setHeadBackgroundColor] = useState("");
   const [changeMessageColor, setChangeMessageColor] = useState("");
-
-  const handleClickPlus = () => {
-    setCount((prevState) => prevState + 1);
-  };
-
-  const handleClickMinus = () => {
-    setCount((prevState) => prevState - 1);
-  };
 
   useEffect(() => {
     if (count < 37) {
@@ -40,10 +35,10 @@ function App() {
         </div>
 
         <div className="mid-section ">
-          <button onClick={handleClickMinus}>
+          <button onClick={() => dispatch(decrement())}>
             <h1>-</h1>
           </button>
-          <button onClick={handleClickPlus}>
+          <button onClick={() => dispatch(increment())}>
             <h1>+</h1>
           </button>
         </div>
