@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import { increment, decrement } from "./toolkit/reducer";
 
 function App() {
   const [count, setCount] = useState(36);
@@ -60,5 +61,3 @@ function App() {
 }
 
 export default App;
-
-//   <button onClick={handleClickChangeParagraf}>Click!</button>
